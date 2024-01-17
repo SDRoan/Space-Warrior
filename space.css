@@ -1,0 +1,69 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center the canvas horizontally */
+    align-items: center; /* Center the canvas vertically */
+    height: 100vh;
+    position: relative; /* Establish a positioning context for absolutely positioned children */
+}
+#top-image {
+    background-image: url('Top.png'); /* Assuming you name your top space image 'Top.png' */
+    background-size: cover;
+    background-position: center;
+    width: 34%; /* Full width */
+    height: 113px; /* Adjust the height as needed to fill the top white space */
+    position: absolute;
+    top: 0;
+    left: 5;
+    z-index: 2; /* Ensure it is above the canvas but below the score */
+    
+}
+
+#fighter-image, #alien-image {
+    flex-grow: 1;
+    object-fit: cover; /* Cover the container area without stretching */
+    width: 100px; /* Fixed width, you might need to adjust this */
+    height: 100vh; /* Full height of the viewport */
+}
+
+#board {
+    background-image: url('W.png'); /* Path to your starry sky image */
+    background-size: cover; /* Cover the entire canvas area */
+    background-position: center; /* Center the image on the canvas */
+    width: 512px; /* Adjust to match the width of your canvas */
+    height: 512px; /* Adjust to match the height of your canvas */
+    
+}
+
+
+
+    
+    h1 {
+        color: white;
+        position: absolute;
+        top: 16px; 
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3; 
+    }
+
+
+
+#hud {
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 515px; 
+    z-index: 1; 
+    height: 117px;
+}
